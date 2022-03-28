@@ -15,12 +15,15 @@ use App\Http\Controllers\SessionController;
 */
 
 Route::get('/', function () {
-    return view('home');
+    return view('auth.Login');
 });
 Route::get('/register',[RegisterController::class,'create'])->name('register.index');
 Route::get('/login',[SessionController::class,'create'])->name('login.index');
 Route::post('/register',[RegisterController::class,'store'])->name('register.store');
-Route::post('/login',[SessionController::class,'store'])->name('login.store');
 Route::post('/comprobar',[SessionController::class,'comprobar'])->name('login.comprobar');
+Route::post('/logout',[SessionController::class,'LogOut'])->name('login.logout');
+Route::post('/login',[SessionController::class,'store'])->name('login.store');
+
+
 
 
